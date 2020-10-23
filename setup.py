@@ -23,7 +23,7 @@ setup(name='python-irodsclient',
       long_description=long_description,
       long_description_content_type='text/x-rst',
       license='BSD',
-      url='https://github.com/irods/python-irodsclient',
+      url='https://github.com/kxk302/python-irodsclient',
       keywords='irods',
       classifiers=[
                    'License :: OSI Approved :: BSD License',
