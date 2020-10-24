@@ -92,7 +92,7 @@ class Connection(object):
         except socket.error as e:
             logger.error("Could not receive server response: " + str(e)) 
             self.release(True)
-            raise NetworkException("Could not receive server response")
+            raise NetworkException("Could not receive server response: " + str(e))
         if msg.int_info < 0:
             try:
                 err_msg = iRODSMessage(msg=msg.error).get_main_message(Error).RErrMsg_PI[0].msg
