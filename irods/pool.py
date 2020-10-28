@@ -56,7 +56,7 @@ class Pool(object):
             self.active.add(conn)
 
         curr_time = datetime.datetime.now()
-        logger.debug('connection create time: {}, created {} seconds ago'.format(conn.create_time, (curr_time - conn.create_time).total_seconds()))
+        logger.error('connection create time: {}, created {} seconds ago'.format(conn.create_time, (curr_time - conn.create_time).total_seconds()))
         logger.debug('num active: {}'.format(len(self.active)))
         return conn
 
