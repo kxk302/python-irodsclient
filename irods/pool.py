@@ -8,6 +8,7 @@ from irods import DEFAULT_CONNECTION_TIMEOUT
 from irods.connection import Connection
 
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 
 DEFAULT_APPLICATION_NAME = 'python-irodsclient'
@@ -56,7 +57,7 @@ class Pool(object):
             self.active.add(conn)
 
         curr_time = datetime.datetime.now()
-        logger.error('connection create time: {}, created {} seconds ago'.format(conn.create_time, (curr_time - conn.create_time).total_seconds()))
+        logger.debug('connection create time: {}, created {} seconds ago'.format(conn.create_time, (curr_time - conn.create_time).total_seconds()))
         logger.debug('num active: {}'.format(len(self.active)))
         return conn
 
